@@ -1,6 +1,8 @@
+
 <ul class="list-group">
     <li  [class]="getAllBrandClass()" (click)="setClearCurrentBrand()" routerLink = "/cars">All Car Brands</li>
-    <li *ngFor="let brand of brands" 
+    <input type="text" [(ngModel)]="filterTextBrand" class="form-control" id="filterTextBrand" placeholder="Enter brand">
+    <li *ngFor="let brand of brands | brandFilter:filterTextBrand"
     routerLink ="/cars/brand/{{brand.brandId}}"
     (click)="setCurrentBrand(brand)" 
     [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
