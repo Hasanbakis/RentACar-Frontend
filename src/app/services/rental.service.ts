@@ -12,7 +12,7 @@ export class RentalService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getRentals():Observable<ListReponseModel<Rental>>{
-    return this.httpClient.get<ListReponseModel<Rental>>(this.apiUrl);
-  }
+  // getRentals():Observable<ListReponseModel<Rental>>{
+  //   return this.httpClient.get<ListReponseModel<Rental>>(this.apiUrl);
+  // }
 }

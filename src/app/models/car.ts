@@ -9,6 +9,7 @@ export interface Car{
     colorName:string;
     description:string;
     imagePath:string;
+    status:boolean;
     
     
 }
