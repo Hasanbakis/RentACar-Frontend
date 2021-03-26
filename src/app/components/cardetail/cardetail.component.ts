@@ -13,7 +13,6 @@ import { environment } from 'src/environments/environment';
 export class CardetailComponent implements OnInit {
   cars:Car[] = [];
   carDetail:CarDetail;
-  
   imageBasePath = environment.baseUrl;
 
   constructor(private carService:CarService,private activatedRoute:ActivatedRoute) { }
