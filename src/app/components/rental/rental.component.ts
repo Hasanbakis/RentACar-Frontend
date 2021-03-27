@@ -21,7 +21,7 @@ export class RentalComponent implements OnInit {
   @Input() car:Car;
   
   constructor(private rentalService:RentalService,private customerService:CustomerService,private activatedRoute:ActivatedRoute,
-     private route:Router,private toastrSevice:ToastrService) {}
+     private router:Router,private toastrSevice:ToastrService) {}
 
   ngOnInit(): void {
     this.getCustomers();
@@ -42,7 +42,7 @@ export class RentalComponent implements OnInit {
   }
   
  
-  addRentals()
+  addRental()
   {
     let rental:Rental =
     {
@@ -51,6 +51,6 @@ export class RentalComponent implements OnInit {
       carId:this.car.carId,
       customerId: parseInt(this.customerId.toString())
     }
-    this.route.navigate(['/payment/', JSON.stringify(rental)]);
+    this.router.navigate(["cars/rental/payment/",JSON.stringify(rental)]);
   }
 } 
