@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Payment } from 'src/app/models/payment';
+import{FormGroup,FormBuilder,FormControl, Validators} from "@angular/forms"
+import { ToastrService } from 'ngx-toastr';
 import { Rental } from 'src/app/models/rental';
 import { PaymentService } from 'src/app/services/payment.service';
 import { RentalService } from 'src/app/services/rental.service';
@@ -11,45 +11,52 @@ import { RentalService } from 'src/app/services/rental.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  cardNumber:number;
-  firstName:string;
-  lastName:string;
-  expirationDate:string;
-  cVV:number;
+  payForm: FormGroup;
   rental:Rental;
-
-
-  constructor(
-      private rentalService:RentalService,
-      private paymentService:PaymentService,
-      private activatedRoute:ActivatedRoute,
-      private router:Router
-  ) { }
+  constructor(private formBuilder:FormBuilder,private paymentService:PaymentService,private toastrService:ToastrService,private rentalService:RentalService) { 
+    // this.rentalService.rental.subscribe(
+    //   (gelenRent)=>{
+    //     console.log(gelenRent);
+    //     this.rental=gelenRent;
+    //   }
+    // )
+  }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params =>{
-      if(params["rental"]){
-        this.rental = JSON.parse(params["rental"]);
-      }
-    })
+    
+    this.createPayForm();
+
   }
 
-  addRental(){
-    let newPayment:Payment ={
-      cardNumber:this.cardNumber,
-      firtsName:this.firstName,
-      lastName:this.lastName,
-      expirationDate:this.expirationDate,
-      cVV: this.cVV
+  createPayForm(){
+    
+    this.payForm =this.formBuilder.group({
+      cardNumber:["",Validators.required],
+      firstName:["",Validators.required],
+      lastName:["",Validators.required],
+      expirationDate:["",Validators.required],
+      cVV:["",Validators.required]
+
+
+    });
+
+  }
+
+  pay(){
+
+    if(this.payForm.valid){
+      let payment =Object.assign({},this.payForm.value)
+      this.paymentService.addPayment(payment).subscribe(response=>{
+        this.toastrService.success(response.message,"İşlem Tamamlandı")
+        
+      })
+     
+    }else{
+      this.toastrService.error("Ödenemedi","Hata")
+
     }
-    this.paymentService.addPayment(newPayment);
-    this.rentalService.addRental(this.rental);
-    this.router.navigate(["cars/"]);
-
+   
+    
   }
-
-
-
-
 
 }
