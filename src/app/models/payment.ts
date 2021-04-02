@@ -1,8 +1,8 @@
 export interface Payment{
     paymentId?:number;
-    cardNumber:number;
-    firtsName:string;
+    cardNumber:string;
+    firstName:string;
     lastName:string;
     expirationDate:string;
-    cVV:number;
+    cVV:string;
 }

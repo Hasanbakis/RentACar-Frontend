@@ -49,6 +49,12 @@ export class PaymentComponent implements OnInit {
       this.paymentService.addPayment(payment).subscribe(response=>{
         this.toastrService.success(response.message,"İşlem Tamamlandı")
         
+      },responseError=>{
+        if(responseError.error.ValidationErrors.length>0){
+          for (let i = 0; i <responseError.error.ValidationErrors.length; i++) {
+            this.toastrService.error(responseError.error.ValidationErrors[i].ErrorMessage,"Doğrulama hatası")  
+          }
+        }
       })
      
     }else{

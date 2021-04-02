@@ -1,19 +1,14 @@
 <div class="card">
-  <!-- <div class="card-header text-center">
-      <strong>
-          {{carDetail.car.brandName}} - {{carDetail.car.modelYear}}
-      </strong>
-  </div>-->
-  <!-- <div class="card-body"> 
-      <div class="d-grid gap-2 mb-2" *ngIf="carDetail.car.status == true">
-          <app-rental [car]="carDetail.car"></app-rental>
+   <!-- <div class="card-body"> 
+      <div class="d-grid gap-2 mb-2" *ngIf="car.status == true">
+          <app-rental [car]="car"></app-rental>
       </div>
-      <div class="d-grid gap-2 mb-2" *ngIf="carDetail.car.status == false">
+      <div class="d-grid gap-2 mb-2" *ngIf="car.status == false">
           <div class="alert alert-danger">Araç şuan kiralanamaz</div>
       </div>  -->
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+<div  *ngIf="car" id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div *ngFor="let car of cars" class="carousel-item active" data-bs-interval="10000">
+        <div  class="carousel-item active" data-bs-interval="10000">
         <img src="{{imageBasePath}}/{{car.imagePath}}" class="d-block w-100" alt="{{car.description}} Image">
       </div>
     </div>
@@ -26,13 +21,13 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div>
-    <ul *ngFor="let car of cars" class="list-group list-group-flush">
-        <li class="list-group-item">Brand: {{car.brandName}}</li>
+  <div *ngIf="car">
+    <ul  class="list-group list-group-flush">
+       <li class="list-group-item">Brand: {{car.brandName}}</li>
         <li class="list-group-item">Color: {{car.colorName}}</li>
         <li class="list-group-item">Model Year:{{car.modelYear}}</li>
         <li class="list-group-item">Price: {{car.dailyPrice}} $</li>
-        <div><app-rental  [car]="car"></app-rental></div> 
+         <div><app-rental [car]="car"></app-rental></div> 
       </ul>
 
   </div>

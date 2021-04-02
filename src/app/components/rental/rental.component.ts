@@ -25,6 +25,7 @@ export class RentalComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomers();
+   
   }
 
 
@@ -51,6 +52,9 @@ export class RentalComponent implements OnInit {
       carId:this.car.carId,
       customerId: parseInt(this.customerId.toString())
     }
-    this.router.navigate(["cars/rental/payment/",JSON.stringify(rental)]);
+   
+    this.router.navigateByUrl('/payment');
+    // this.router.navigate(["/payment/",JSON.stringify(rental)]);
+    this.toastrSevice.info("Ödeme sayfasına yönlendiriliyorsunuz.","Ödeme işlemleri")
   }
 } 

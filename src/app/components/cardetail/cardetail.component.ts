@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarDetail } from 'src/app/models/carDetails';
 import { CarService } from 'src/app/services/car.service';
+import { CardetailService } from 'src/app/services/cardetail.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -11,24 +12,26 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./cardetail.component.css']
 })
 export class CardetailComponent implements OnInit {
-  cars:Car[] = [];
+  car:Car;
   carDetail:CarDetail;
   imageBasePath = environment.baseUrl;
 
-  constructor(private carService:CarService,private activatedRoute:ActivatedRoute) { }
+  constructor(private carDetailService:CardetailService,private carService:CarService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
       if(params["carId"]){
         this.getCarDetail(params["carId"]);
+        
       }
     })  
   }
 
   getCarDetail(carId:number){
-    this.carService.getCarDetail(carId).subscribe((response)=>{
-      this.cars = response.data;
-      
+    this.carDetailService.getCarDetail(carId).subscribe((response)=>{
+      this.car = response.data;
+
+     
     })
   }
 

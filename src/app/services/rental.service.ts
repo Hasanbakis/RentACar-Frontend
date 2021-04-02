@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import {HttpClient}  from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListReponseModel } from '../models/listResponseModel';
@@ -10,7 +10,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class RentalService {
   apiUrl ='https://localhost:44320/api/';
-
+  rental = new EventEmitter<Rental>();
   constructor(private httpClient:HttpClient) { }
 
   getRentals():Observable<ListReponseModel<Rental>>
@@ -24,4 +24,8 @@ export class RentalService {
     let newPath = this.apiUrl+"rentals/add";
     return this.httpClient.post<ResponseModel>(newPath,{rental:rental})
   }
+
+  // sendRental(rent:Rental){
+  //   this.rental.emit(rent);
+  // }
 }
