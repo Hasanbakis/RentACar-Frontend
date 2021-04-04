@@ -15,6 +15,7 @@ export class CardetailComponent implements OnInit {
   car:Car;
   carDetail:CarDetail;
   imageBasePath = environment.baseUrl;
+  defaultImg="logo.jpg"
 
   constructor(private carDetailService:CardetailService,private carService:CarService,private activatedRoute:ActivatedRoute) { }
 
@@ -30,8 +31,6 @@ export class CardetailComponent implements OnInit {
   getCarDetail(carId:number){
     this.carDetailService.getCarDetail(carId).subscribe((response)=>{
       this.car = response.data;
-
-     
     })
   }
 

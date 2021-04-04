@@ -10,12 +10,16 @@ import { Car } from '../models/car';
   providedIn: 'root'
 })
 export class CardetailService {
-  apiUrl='https://localhost:44320/api/';
+  apiUrl='https://localhost:44320/api/cars/';
 
   constructor(private httpClient:HttpClient) { }
 
   getCarDetail(carId:number):Observable<SingleResponseModel<Car>>{
-    let newPath = this.apiUrl + "cars/getcardetail?carId=" + carId
-    return this.httpClient.get<SingleResponseModel<Car>>(newPath)
-  }
+     let newPath = this.apiUrl + "getcardetail?carId=" + carId
+     return this.httpClient.get<SingleResponseModel<Car>>(newPath)
+   }
+
+   
+
+ 
 }

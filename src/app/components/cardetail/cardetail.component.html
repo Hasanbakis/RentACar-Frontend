@@ -9,7 +9,13 @@
 <div  *ngIf="car" id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div  class="carousel-item active" data-bs-interval="10000">
-        <img src="{{imageBasePath}}/{{car.imagePath}}" class="d-block w-100" alt="{{car.description}} Image">
+          <img
+          [src]="car.images.length !== 0 ? imageBasePath+ car.images[0] : imageBasePath + defaultImg"
+          class="card-img-top"
+          alt="{{ car.description }} Image"
+          width="100%"
+          height="100%"
+        />
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="prev">

@@ -76,14 +76,14 @@ export class ColorListComponent implements OnInit {
         }, 1000);
 
       },responseError =>{
-        if(responseError.error.ValdationErrors.length>0){
-            for( let i=0; i<responseError.ValdationErrors.length; i++){
-              this.toastrService.error(responseError.error.ValdationErrors[i].ErrorMessage,"Doğrulama hatası");
+        if(responseError.error.ValidationErrors.length>0){
+            for( let i=0; i<responseError.error.ValidationErrors.length; i++){
+              this.toastrService.error(responseError.error.ValidationErrors[i].ErrorMessage,"Doğrulama hatası");
             }
         }
       })
     } else {
-      this.toastrService.warning("Marka ismi boş olamaz","Güncelleme başarısız")
+      this.toastrService.warning("Renk ismi boş olamaz","Güncelleme başarısız")
     }
   }
 
