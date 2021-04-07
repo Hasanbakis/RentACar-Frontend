@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CardetailComponent implements OnInit {
   car:Car;
-  carDetail:CarDetail;
+  carDetail:CarDetail[]=[];
   imageBasePath = environment.baseUrl;
   defaultImg="logo.jpg"
 
@@ -25,13 +25,24 @@ export class CardetailComponent implements OnInit {
         this.getCarDetail(params["carId"]);
         
       }
-    })  
+    })
+
+
   }
 
   getCarDetail(carId:number){
     this.carDetailService.getCarDetail(carId).subscribe((response)=>{
       this.car = response.data;
+      console.log(this.car);
     })
   }
+
+  getAllCarDetails(){
+    this.carDetailService.getAllCarDetails().subscribe(response=>{
+      this.carDetail = response.data;
+    })
+  }
+
+
 
 }

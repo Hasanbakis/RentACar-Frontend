@@ -27,6 +27,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
 import { CarListComponent } from './components/car-list/car-list.component';
 import { LoginComponent } from './components/login/login.component'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CarUpdateComponent,
     CarListComponent,
     LoginComponent,
+    RegisterComponent,
    
   ],
   imports: [

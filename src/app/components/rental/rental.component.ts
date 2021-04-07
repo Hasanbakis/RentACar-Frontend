@@ -25,8 +25,12 @@ export class RentalComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCustomers();
+    this.getMinDate();
+    this.getMinDate();
+   
    
   }
+  
 
 
   getCustomers(){
@@ -45,16 +49,32 @@ export class RentalComponent implements OnInit {
  
   addRental()
   {
-    let rental:Rental =
+    let RentalModel =
     {
       rentDate:this.rentDate,
       returnDate:this.returnDate,
       carId:this.car.carId,
       customerId: parseInt(this.customerId.toString())
     }
+    this.rentalService.addRental(RentalModel).subscribe(response=>{
+      this.toastrSevice.success(response.message,"Başarılı");
+      console.log(response.message)
+      this.toastrSevice.info("Ödeme sayfasına yönlendiriliyorsunuz.","Ödeme işlemleri")
+      this.router.navigateByUrl('/payment');
+    },responseError=>{
+      this.toastrSevice.error(
+        responseError.error.message,
+        'Kiralanamadı'
+      )
+      this.toastrSevice.info("Ana sayfaya yönlendiriliyorsunuz.")
+      setTimeout(() => {
+        this.router.navigateByUrl('cars');
+      },5000);
+      
+      
+    })
+
    
-    this.router.navigateByUrl('/payment');
-    // this.router.navigate(["/payment/",JSON.stringify(rental)]);
-    this.toastrSevice.info("Ödeme sayfasına yönlendiriliyorsunuz.","Ödeme işlemleri")
+   
   }
 } 

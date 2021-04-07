@@ -22,7 +22,7 @@ export class RentalService {
   addRental(rental:Rental):Observable<ResponseModel>
   {
     let newPath = this.apiUrl+"rentals/add";
-    return this.httpClient.post<ResponseModel>(newPath,{rental:rental})
+    return this.httpClient.post<ResponseModel>(newPath,rental)
   }
 
   // sendRental(rent:Rental){

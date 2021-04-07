@@ -3,7 +3,7 @@
   class="btn btn-primary"
   data-bs-toggle="modal"
   data-bs-target="#exampleModal"
-  *ngIf="car.status == true"
+ 
 >
   Rent
 </button>
@@ -64,7 +64,7 @@
               class="form-control"
               min="{{ getMinDate() }}"
               value="{{ getMinDate() }}"
-              type="date"
+              type="Date"
               [(ngModel)]="rentDate"
             />
           </div>
