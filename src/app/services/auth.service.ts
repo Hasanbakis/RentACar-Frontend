@@ -2,10 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginModel } from '../models/loginModel';
-import { RegisterModel } from '../models/registerModel';
-import { ResponseModel } from '../models/responseModel';
+
+
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
+import { User } from '../models/User';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,21 +15,21 @@ import { TokenModel } from '../models/tokenModel';
 export class AuthService {
   apiUrl = 'https://localhost:44320/api/auth/';
 
-  constructor(private httClient: HttpClient) {}
+  constructor(private httClient: HttpClient,private localStorageService:LocalStorageService) {}
 
   login(loginModel: LoginModel):Observable<SingleResponseModel<TokenModel>>{
     //user
     return this.httClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + 'login', loginModel);
   }
 
-  register(registerModel:RegisterModel):Observable<SingleResponseModel<RegisterModel>>{
+  register(user:User):Observable<SingleResponseModel<User>>{
     let newPath=this.apiUrl +"register";
-    return this.httClient.post<SingleResponseModel<RegisterModel>>(newPath,registerModel)
+    return this.httClient.post<SingleResponseModel<User>>(newPath,user)
     
   }
 
   isAuthenticated() {
-    if (localStorage.getItem('token')) {
+    if (this.localStorageService.get('token')) {
       return true;
     } else {
       return false;
