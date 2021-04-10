@@ -7,6 +7,7 @@ import { LoginModel } from '../models/loginModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { User } from '../models/User';
+
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({

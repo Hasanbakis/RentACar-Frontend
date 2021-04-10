@@ -1,53 +1,79 @@
-<div class="content">
-    <div class="col-md-12">
-        <div class="card">
-        <div class="card-header"><h5 class="title">Ödeme işlemleri</h5></div>
-        <div class="card-body">
-            
-        <form [formGroup]="payForm">
-
-            <div class="mb-3">
-            <div class="form-group">
-                <input type="text" id="cardNumber" formControlName="cardNumber" 
-                class="form-control" placeholder="Kart numarasını gir"/>
-            </div>
-           </div>
-           <div class="mb-3">
-            <div class="form-group">
-                <input type="text" id="firstName" formControlName="firstName" 
-                class="form-control" placeholder="Adını gir"/>
-            </div>
-             </div>
-             <div class="mb-3">
-            <div class="form-group">
-                <input type="text" id="lastName" formControlName="lastName" 
-                class="form-control" placeholder="Soyadını gir"/>
-            </div>
-            </div>
-            <div class="mb-3">
-            <div class="form-group">
-                <input type="text" id="expirationDate" formControlName="expirationDate" 
-                class="form-control" placeholder="Kart son kullanma tarihi"/>
-            </div>
-            </div>
-            <div class="mb-3">
-            <div class="form-group">
-                <input type="text" id="cVV" formControlName="cVV" 
-                class="form-control" placeholder="3 haneli cvv ni gir"/>
-            </div>
-        </div>
-
-        </form>
-
+<!-- Save Card -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button (click)="payment()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Would you like to save your card?</div>
+      <div class="modal-footer">
+        <button (click)="saveCard()" type="button" class="btn btn-success">Save Card</button>
+      </div>
     </div>
-    <div class="card-footer">
-        <button class="btn btn-fill btn-primary" role="button" (click)="pay()">Ödeme yap</button>
-    </div>
-
-
-        </div>
-
-
-    </div>
-   
+  </div>
 </div>
+
+  
+  <!-- Form Card -->
+  <div class="card mt-4">
+    <div class="card-body">
+        <div class="icons">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+          <img src="https://img.icons8.com/color/48/000000/maestro.png" />
+        </div>
+        <div>
+        <form [formGroup]="creditCardAddForm">
+
+           <div *ngIf="creditCards.length>0" class="mb-3" style="width: 12rem;">
+            <label for="customerCards">Your Credit Cards</label>
+            <select class="form-control" (ngModelChange)="setCardInfos()" formControlName="customerCards" required
+              id="customerCards" name="customerCards">
+              <option *ngFor="let card of creditCards" [value]="card.id" class="form-control">{{card.cardNumber}}
+              </option>
+            </select>
+          </div>
+  
+          <div class="form-floating mb-3">
+            <input type="text" id="nameOnTheCard" class="form-control" placeholder="nameOnTheCard"
+              formControlName="nameOnTheCard">
+            <label for="nameOnTheCard">Name on the Card</label>
+          </div>
+  
+          <div class="form-floating mb-3">
+            <input type="text" id="cardNumber" class="form-control" placeholder="cardNumber" formControlName="cardNumber">
+            <label for="cardNumber">Card Number</label>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-floating mb-3">
+                <input type="text" id="expirationDate" class="form-control" placeholder="expirationDate"
+                  formControlName="expirationDate">
+                <label for="expirationDate">Expiration Date</label>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-floating mb-3">
+                <input type="text" id="cvv" class="form-control" placeholder="cvv" formControlName="cvv">
+                <label for="cvv">CVV</label>
+              </div>
+            </div>
+          </div>
+  
+          <!-- payment -->
+  
+          <div class="card-footer">
+            <div class="row">
+              <button (click)="payment()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <strong>PAY </strong>
+              </button>
+            </div>
+          </div>
+  
+        </form>
+      </div>
+  
+      
+    </div>
+  </div>

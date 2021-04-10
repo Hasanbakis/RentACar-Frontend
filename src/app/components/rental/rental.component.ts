@@ -20,6 +20,7 @@ export class RentalComponent implements OnInit {
   returnDate:Date;
   @Input() car:Car;
   
+  
   constructor(private rentalService:RentalService,private customerService:CustomerService,private activatedRoute:ActivatedRoute,
      private router:Router,private toastrSevice:ToastrService) {}
 
@@ -49,18 +50,19 @@ export class RentalComponent implements OnInit {
  
   addRental()
   {
-    let RentalModel =
+    let rental:Rental =
     {
+      carId:this.car.carId,
       rentDate:this.rentDate,
       returnDate:this.returnDate,
-      carId:this.car.carId,
       customerId: parseInt(this.customerId.toString())
+      
     }
-    this.rentalService.addRental(RentalModel).subscribe(response=>{
+    this.rentalService.addRental(rental).subscribe(response=>{
       this.toastrSevice.success(response.message,"Başarılı");
       console.log(response.message)
       this.toastrSevice.info("Ödeme sayfasına yönlendiriliyorsunuz.","Ödeme işlemleri")
-      this.router.navigateByUrl('/payment');
+      this.router.navigateByUrl('/payment/'+JSON.stringify(rental));
     },responseError=>{
       this.toastrSevice.error(
         responseError.error.message,
