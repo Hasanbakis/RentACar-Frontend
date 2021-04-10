@@ -12,19 +12,20 @@
     height="100%"
   />
     <div  class="card-body">
-      <h5 class="card-title">{{car.description}}</h5>
+      <h5 class="card-title" [appHighlight]="color">{{car.description}}</h5>
     </div >
     <ul *ngIf="car" class="list-group list-group-flush">
       <li class="list-group-item">Brand: {{car.brandName}}</li>
       <li class="list-group-item">Color: {{car.colorName}}</li>
       <li class="list-group-item">Model Year:{{car.modelYear}}</li>
       <li class="list-group-item">Price: {{car.dailyPrice}} $</li>
-      <li class="list-group-item">Findex Point: {{car.findexPoint}} </li>
+      <li class="list-group-item" >Findex Point: {{car.findexPoint}} </li>  
     </ul>
     <div class="card-body">
       <section style="float:left">
         <button routerLink="/cars/details/{{car.carId}}" type="button" class="btn btn-primary">Details</button>
       </section>
     </div>
+  
   </div>
 </div>
