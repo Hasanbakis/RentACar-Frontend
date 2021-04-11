@@ -68,6 +68,16 @@ export class PaymentComponent implements OnInit {
     });
   }
 
+  totalPayment() {
+    if (this.rental.returnDate != null) {
+      let dateRent = new Date(this.rental.returnDate.toString());
+      let dateReturn = new Date(this.rental.rentDate.toString());
+      let day = (dateRent.getTime() - dateReturn.getTime());
+      let days = Math.ceil(day / (1000 * 3600 * 24));
+      this.amount = days * (this.car.dailyPrice);
+    }
+  }
+
   saveCard(){
     let cardModel:Card ={
       cardNumber:this.cardNumber,

@@ -7,7 +7,7 @@ export interface Rental{
     //  colorName:string;
     //  brandName:string;
     //  description:string;
-    rentDate?:Date;
+    rentDate:Date;
     returnDate?:Date;
    
 
