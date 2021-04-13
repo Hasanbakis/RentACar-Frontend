@@ -2,7 +2,7 @@
     <div class="col-md-12">
       <div class="panel-footer text-center">
         <span class="d-block p-1 bg-primary text-white" style="margin-top: 10px">
-          <h5>Renkler</h5>
+          <h5>Colors</h5>
         </span>
       </div>
         
@@ -14,10 +14,10 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Renk Adı</th>
+            <th>Color Name</th>
             <th style="text-align: center; width: 100px">
               <button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add formButton" data-bs-toggle="modal" data-bs-target="#addColorModal">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true">Ekle</span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true">Add</span>
               </button>
             </th>
           </tr>
@@ -46,22 +46,22 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="AddColorTitle">Renk Ekle</h5>
+          <h5 class="modal-title" id="AddColorTitle">Color Add</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form [formGroup]="colorAddForm" >
             <div class="row">
               <div class="col-8">
-                <label for="colorName">Renk</label>
+                <label for="colorName">Color</label>
                 <input type="text" class="form-control" id="colorName" formControlName="colorName">
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-          <button class="btn btn-success" (click)="addColor()" data-bs-dismiss="modal" >Kaydet</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success" (click)="addColor()" data-bs-dismiss="modal" >Save</button>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="updateColorTitle">Renk Güncelle</h5>
+          <h5 class="modal-title" id="updateColorTitle">Color Update</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -85,15 +85,15 @@
                 <input type="number" class="form-control" *ngIf="selectedColor" id="colorId" name="colorId" formControlName="colorId" value="{{selectedColor.colorId}}" readonly>
               </div>
               <div class="col-8">
-                <label for="colorName">Renk</label>
+                <label for="colorName">Color</label>
                 <input type="text" class="form-control" *ngIf="selectedColor" id="colorName" formControlName="colorName" value="{{selectedColor.colorName}}">
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-          <button class="btn btn-primary" (click)="updateColor()" data-bs-dismiss="modal" >Kaydet</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary" (click)="updateColor()" data-bs-dismiss="modal" >Save</button>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteColorTitle">Renk Sil</h5>
+          <h5 class="modal-title" id="deleteColorTitle">Delete Color</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -116,15 +116,15 @@
                 <input type="number" class="form-control" *ngIf="selectedColor" id="colorId" name="colorId" formControlName="colorId" value="{{selectedColor.colorId}}" readonly>
               </div>
               <div class="col-8">
-                <label for="colorName">Renk</label>
+                <label for="colorName">Color</label>
                 <input type="text" class="form-control" *ngIf="selectedColor" id="colorName" formControlName="colorName" value="{{selectedColor.colorName}}" readonly>
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-          <button class="btn btn-danger" (click)="deleteColor()" data-bs-dismiss="modal" >Sil</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-danger" (click)="deleteColor()" data-bs-dismiss="modal" >Delete</button>
         </div>
       </div>
     </div>

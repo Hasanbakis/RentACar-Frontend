@@ -2,7 +2,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h5 class="title">Bilgileri Güncelle</h5>
+          <h5 class="title">Update İnformantions</h5>
         </div>
         <div class="card-body">
           <form [formGroup]="userUpdateForm">
@@ -20,7 +20,7 @@
               </div>
               <div class="mb-3">
                 <div class="form-group">
-                    <label for="name">Ad</label>
+                    <label for="name">Name</label>
                     <div class="form-group">
                       <input
                         type="text"
@@ -35,7 +35,7 @@
               </div>
               <div class="mb-3">
                 <div class="form-group">
-                    <label for="lastname">Soyad</label>
+                    <label for="lastname">Last Name</label>
                     <div class="form-group">
                       <input
                         type="text"
@@ -65,7 +65,7 @@
               </div>
               <div class="mb-3">
                 <div class="form-group">
-                    <label for="password">Şifre</label>
+                    <label for="password">Password</label>
                     <div class="form-group">
                       <input
                         type="password"
@@ -83,9 +83,9 @@
           </form>
         </div>
         <div class="card-footer">
-          <button class="btn btn-fill btn-success" (click)="informations()">Bilgilerim</button>
+          <button class="btn btn-fill btn-success" (click)="informations()">My information</button>
           <hr>
-            <button class="btn btn-fill btn-danger"(click)="update()" >Güncelle</button>
+            <button class="btn btn-fill btn-danger"(click)="update()" >Update</button>
         </div>
       </div>
   

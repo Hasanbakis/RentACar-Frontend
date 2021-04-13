@@ -9,7 +9,7 @@
             
             <div class="col-6">
                 <div class="mb-3">
-                <label for="brandId">Markalar </label>
+                <label for="brandId">Brands </label>
                 <div class="form-group">
                   <select id="brandId" class="form-select"  formControlName="brandId">
                     <option [ngValue]="brand.brandId" *ngFor="let brand of brands">{{ brand.brandName }}</option>
@@ -20,7 +20,7 @@
 
             <div class="col-6">
                 <div class="mb-3">
-                <label for="colorId">Renkler </label>
+                <label for="colorId">Colors </label>
                     <div class="form-group">
                     <select id="colorId" class="form-select"  formControlName="colorId">
                         <option [ngValue]="color.colorId" *ngFor="let color of colors">{{ color.colorName }}</option>
@@ -32,7 +32,7 @@
  
         <div class="row">
             <div class="mb-3">
-                <label for="carName">Araç adı</label>
+                <label for="carName">Vehicle name</label>
                 <div class="form-group">
                     <input type="text" id="carName" class="form-control" formControlName="carName"/>                   
                 </div>
@@ -44,7 +44,7 @@
 
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="modelYear">Model Yılı</label>
+                    <label for="modelYear">Model year</label>
                     <div class="form-group">
                         <input type="number" id="modelYear" class="form-control" formControlName="modelYear"/>                   
                     </div>
@@ -53,7 +53,7 @@
 
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="dailyPrice">Günlük Fiyatı</label>
+                    <label for="dailyPrice">Daily Price</label>
                     <div class="form-group">
                         <input type="number" id="dailyPrice" class="form-control" formControlName="dailyPrice"/>                   
                     </div>
@@ -64,7 +64,7 @@
 
           <div class="row">
             <div class="mb-3">
-                <label for="description">Araç Tanımı</label>
+                <label for="description">Vehicle description</label>
                 <div class="form-group">
                     <input type="text" id="description" class="form-control" formControlName="description"/>                   
                 </div>
@@ -76,7 +76,7 @@
     </div>
   
     <div class="card-footer">
-      <button class="btn btn-fill btn-primary" [routerLink]="['/cars']" (click)="addCar()">Araç Ekle</button>
+      <button class="btn btn-fill btn-primary" [routerLink]="['/cars']" (click)="addCar()">Add vehicle</button>
     </div>
   
   </div>
