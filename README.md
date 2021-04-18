@@ -1,28 +1,28 @@
-RentACar
+RentACar<br/>
 Projenin İçeriği
-CRUD Operasyonlar
-Add, Ekleme
-Read, Okuma
-Update, Güncelleme
-Delete, Silme
-Filtreleme
-String veri ile
-Id ile çoklu filtreleme
-Auth
-Login
-Register
-Profile Update
-Password Update
-Reactive Forms
-Validasyon işlemleri
-Toastr
-Componentler arası veri Transfer, Child to Parent Data Binding
-Locale Storage kontrolü
-Models
-Services
-Custom pipes
-Interceptor
-Auth: Http isteklerinde, Access Token'ı gönderiyor
-Expiration: Access Token'in süresi dolduğunda, oturum bilgilerini silip, giriş sayfasına yönlendiriyor
-Bootsrat v5 Beta 2
-Bootsrap Icons v1.4.0
+CRUD Operasyonlar<br/>
+Add, Ekleme<br/>
+Read, Okuma<br/>
+Update, Güncelleme<br/>
+Delete, Silme<br/>
+Filtreleme<br/>
+String veri ile<br/>
+Id ile çoklu filtreleme<br/>
+Auth<br/>
+Login<br/>
+Register<br/>
+Profile Update<br/>
+Password Update<br/>
+Reactive Forms<br/>
+Validasyon işlemleri<br/>
+Toastr<br/>
+Componentler arası veri Transfer, Child to Parent Data Binding<br/>
+Locale Storage kontrolü<br/>
+Models<br/>
+Services<br/>
+Custom pipes<br/>
+Interceptor<br/>
+Auth: Http isteklerinde, Access Token'ı gönderiyor<br/>
+Expiration: Access Token'in süresi dolduğunda, oturum bilgilerini silip, giriş sayfasına yönlendiriyor<br/>
+Bootsrat v5 Beta 2<br/>
+Font awesome v5<br/>
