@@ -23,7 +23,6 @@ Services<br/>
 Custom pipes<br/>
 Interceptor<br/>
 Auth: Http isteklerinde, Access Token'ı gönderiyor<br/>
-Expiration: Access Token'in süresi dolduğunda, oturum bilgilerini silip, giriş sayfasına yönlendiriyor<br/>
 Bootsrat v5 Beta 2<br/>
 Font awesome v5<br/>
 
