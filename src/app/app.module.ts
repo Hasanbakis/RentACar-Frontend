@@ -30,6 +30,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     RegisterComponent,
     UserUpdateComponent,
     HighlightDirective,
+    FooterComponent,
    
   ],
   imports: [
