@@ -25,12 +25,11 @@ Reactive Forms<br/>
 Validations<br/>
 Toastr<br/>
 Child to Parent Data Binding<br/>
-Locale Storage kontrolü<br/>
+Locale Storage control<br/>
 Models<br/>
 Services<br/>
 Custom pipes<br/>
 Interceptor<br/>
-Auth: Http isteklerinde, Access Token'ı gönderiyor<br/>
 Bootsrat v5 Beta 2<br/>
 Font awesome v5<br/>
 
