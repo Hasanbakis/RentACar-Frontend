@@ -10,13 +10,12 @@
 # RentACar Projesi İçeriği<br/> 
 
 CRUD Operasyonlar<br/>
-Add, Ekleme<br/>
-Read, Okuma<br/>
-Update, Güncelleme<br/>
-Delete, Silme<br/>
-Filtreleme<br/>
-String veri ile<br/>
-Id ile çoklu filtreleme<br/>
+Add<br/>
+Read<br/>
+Update<br/>
+Delete<br/>
+Filter<br/>
+String <br/>
 Auth<br/>
 Login<br/>
 Register<br/>
