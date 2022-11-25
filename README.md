@@ -7,9 +7,9 @@
 ![3](https://user-images.githubusercontent.com/78306654/115203036-b3e27700-a0ff-11eb-8846-82d309ae786f.PNG)
 ![4](https://user-images.githubusercontent.com/78306654/115203142-cfe61880-a0ff-11eb-8b85-b308e2b23dfe.PNG)
 
-# RentACar Projesi İçeriği<br/> 
+# RentACar Project <br/> 
 
-CRUD Operasyonlar<br/>
+CRUD Operations<br/>
 Add<br/>
 Read<br/>
 Update<br/>
@@ -22,9 +22,9 @@ Register<br/>
 Profile Update<br/>
 Password Update<br/>
 Reactive Forms<br/>
-Validasyon işlemleri<br/>
+Validations<br/>
 Toastr<br/>
-Componentler arası veri Transfer, Child to Parent Data Binding<br/>
+Child to Parent Data Binding<br/>
 Locale Storage kontrolü<br/>
 Models<br/>
 Services<br/>
